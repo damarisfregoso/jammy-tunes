@@ -7,13 +7,19 @@ a {
   color: #00B7FF;
 }
 
-.login {
+/* .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 34px;
-}
+} */
 
 .login img {
   height: 30px;
 }
+
+img {
+  height: 40px;
+  border-radius: 50px;
+}
+
