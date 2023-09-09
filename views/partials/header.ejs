@@ -8,12 +8,17 @@
 </head>
 <body>
   <nav>
-    <a href="/">HOME</a>|
+    <a href="/">HOME</a>&nbsp;|&nbsp;
     <% if (user) { %>
+      <a href="">MY PLAYLISTS</a>&nbsp;|&nbsp;
       <a href="/logout">LOG OUT</a>
-      <%= user.name %> <img class="avatar"src="<%= user.avatar %>" alt="avatar">
+      <img class="avatar"src="<%= user.avatar %>" alt="avatar">
     <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>
   </nav>
+  <% let nameArr = user.name.split(' ') 
+      let firstName = nameArr[0]
+  %>
+  <h1>Welcome to Jammy Tunes <%= firstName %></h1>
 <main>
