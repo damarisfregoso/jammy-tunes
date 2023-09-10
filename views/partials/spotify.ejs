@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/spotify.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
@@ -13,13 +13,11 @@
   <nav>
     <a href="/"><img id="homelogo"src="https://cdn-icons-png.flaticon.com/512/5260/5260437.png" alt="home icon"></a>&nbsp;|&nbsp;
     <% if (user) { %>
-      <a href="/">BROWSE PLAYLISTS</a>&nbsp;|&nbsp;
       <a href="">MY PLAYLISTS</a>&nbsp;|&nbsp;
       <a href="/logout">LOG OUT</a>&nbsp;&nbsp;
       <img id="avatar"src="<%= user.avatar %>" alt="avatar">
     <% } else { %>
-        <a href="">BROWSE PLAYLISTS</a>&nbsp;|&nbsp;
-        <a href="/auth/google">LOG IN&nbsp;<img id="google" src="https://i.imgur.com/FHjYyi0.png"></a>
+        <a href="/auth/google" class="login">LOG IN&nbsp;<img id="google" src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>
   </nav>
 <main>

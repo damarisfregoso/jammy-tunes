@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<form action="/playlists/new" method="POST">
+  <label>
+  Playlist Name:
+  <input type="text" name="name">
+</label>
+  <label>
+  Enter Link:
+  <input type="text" name="link">
+</label>
+  <label>
+  Service:
+    <select name="service">
+      <option value="Apple">Apple</option>
+      <option value="Spotify">Spotify</option>
+    </select>
+</label>
+</form>
+
+<%- include('../partials/footer') %>

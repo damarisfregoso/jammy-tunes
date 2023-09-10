@@ -1,25 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 20px;
+}
+
 body {
-  padding: 50px;
+  background-color: rgb(255, 255, 177);
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'DM Sans', sans-serif;
+}
+
+#headerService {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pickService {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+
+  margin-top: 100px;
+}
+
+#homelogo {
+  height: 40px;
+}
+
+#avatar {
+  border-radius: 50px;
+  height: 50px;
+}
+
+#app-mus, #spot-mus {
+  height: 300px;
+}
+
+#google {
+  height: 20px;
 }
 
 a {
   color: #00B7FF;
 }
-
-/* .login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
-} */
-
-.login img {
-  height: 30px;
-}
-
-img {
-  height: 40px;
-  border-radius: 50px;
-}
-
