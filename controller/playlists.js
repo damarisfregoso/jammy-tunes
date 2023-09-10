@@ -2,7 +2,8 @@ const Playlist = require('../models/playlist');
 
 module.exports = {
   index,
-  new: newPlaylist
+  new: newPlaylist,
+  allPlaylists
 }
 
 async function index(req, res) {
@@ -12,4 +13,15 @@ async function index(req, res) {
 
 function newPlaylist(req, res) {
   res.render('playlists/new', {title: 'Create a Playlist', errorMsg: ''});
+}
+
+async function allPlaylists(req, res) {
+  // Make the query object to use with Book.find based upon
+  // if the user has submitted via a search form for a book name
+  // let playlistQuery = req.query.name 
+  const playlists = await Playlist.find(playlistQuery);
+  // Why not reuse the books/index template?
+  res.render('/playlists/index', {
+    playlists
+  });
 }

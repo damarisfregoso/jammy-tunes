@@ -8,5 +8,7 @@ const playlistCtrl = require('../controller/playlists');
 router.get('/', playlistCtrl.index);
 //GET /playlists/new
 router.get('/new', ensureLoggedIn, playlistCtrl.new);
+//GET /playlists/all
+router.get('/all', playlistCtrl.allPlaylists);
 
 module.exports = router;

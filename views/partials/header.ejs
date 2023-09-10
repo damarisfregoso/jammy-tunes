@@ -13,12 +13,12 @@
   <nav>
     <a href="/"><img id="homelogo"src="https://cdn-icons-png.flaticon.com/512/5260/5260437.png" alt="home icon"></a>&nbsp;|&nbsp;
     <% if (user) { %>
-      <a href="/">BROWSE PLAYLISTS</a>&nbsp;|&nbsp;
-      <a href="">MY PLAYLISTS</a>&nbsp;|&nbsp;
+      <a href="/playlists/index">BROWSE PLAYLISTS</a>&nbsp;|&nbsp;
+      <a href="/playlists">MY PLAYLISTS</a>&nbsp;|&nbsp;
       <a href="/logout">LOG OUT</a>&nbsp;&nbsp;
       <img id="avatar"src="<%= user.avatar %>" alt="avatar">
     <% } else { %>
-        <a href="">BROWSE PLAYLISTS</a>&nbsp;|&nbsp;
+        <a href="/playlists/index">BROWSE PLAYLISTS</a>&nbsp;|&nbsp;
         <a href="/auth/google">LOG IN&nbsp;<img id="google" src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>
   </nav>
