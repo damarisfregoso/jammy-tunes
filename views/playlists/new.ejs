@@ -1,4 +1,8 @@
-<%- include('../partials/apple') %>
+<% if (service === 'apple') { %>
+  <%- include('../partials/apple') %>
+<% } else if (service === 'spotify') { %>
+  <%- include('../partials/spotify') %>
+<% }%>
 
 <h1><%= title %></h1>
 

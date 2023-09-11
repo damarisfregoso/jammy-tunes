@@ -1,0 +1,9 @@
+<% if (service === 'apple') { %>
+  <%- include('../partials/apple') %>
+<% } else if (service === 'spotify') { %>
+  <%- include('../partials/spotify') %>
+<% }%>
+
+<a href='/playlists/<%= service %>/new'>Click to create a Playlist</a>
+
+<%- include('../partials/footer') %>

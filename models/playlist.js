@@ -12,6 +12,7 @@ const playlistSchema = new Schema({
   },
   service: {
     type: String,
+    enum: ['Apple', 'Spotify']
   }
 });
 
