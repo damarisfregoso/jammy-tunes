@@ -11,7 +11,7 @@ const playlistSchema = new Schema({
     required: true
   },
   service: {
-    type: String
+    type: String,
   }
 });
 

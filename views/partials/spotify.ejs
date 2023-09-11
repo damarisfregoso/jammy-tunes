@@ -7,14 +7,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
-  <title>Jammy Tunes</title>
+  <title><%= title %></title>
 </head>
 <body>
   <nav>
     <a href="/"><img id="homelogo"src="https://cdn-icons-png.flaticon.com/512/5260/5260437.png" alt="home icon"></a>&nbsp;|&nbsp;
     <% if (user) { %>
       <a href="/playlists/index">BROWSE PLAYLISTS</a>&nbsp;|&nbsp;
-      <a href="/playlists">MY PLAYLISTS</a>&nbsp;|&nbsp;
+      <a href="/playlists/show">MY PLAYLISTS</a>&nbsp;|&nbsp;
       <a href="/logout">LOG OUT</a>&nbsp;&nbsp;
       <img id="avatar"src="<%= user.avatar %>" alt="avatar">
     <% } else { %>

@@ -1,27 +1,27 @@
-<% if (service === 'Apple') { %>
-  <%- include('../partials/apple') %>
-<% } else { %>
-  <%- include('../partials/spotify') %>
-<% } %>
+<%- include('../partials/apple') %>
 
-<%- include('../partials/header') %>
+<h1><%= title %></h1>
 
-<form action="/playlists/new" method="POST">
+<form id="createPlaylists" action="/playlists" method="POST">
   <label>
   Playlist Name:
-  <input type="text" name="name">
+  <input type="text" name="name" autocomplete="off">
 </label>
   <label>
   Enter Link:
-  <input type="text" name="link">
+  <input type="text" name="link" autocomplete="off">
 </label>
   <label>
   Service:
     <select name="service">
-      <option value="Apple">Apple</option>
-      <option value="Spotify">Spotify</option>
+      <option value="<%= service %>"><%= service %></option>
     </select>
 </label>
+<label>
+  <button type="submit">Add a Song</button>
+</label>
 </form>
+
+<%- include('../partials/directions') %>
 
 <%- include('../partials/footer') %>

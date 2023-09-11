@@ -2,7 +2,12 @@ const Playlist = require('../models/playlist');
 
 module.exports = {
   index,
-  allPlaylists
+  show, 
+  apple,
+  new: newApple,
+  spotify,
+  new: newSpotify,
+  // allPlaylists
 }
 
 async function index(req, res) {
@@ -10,13 +15,24 @@ async function index(req, res) {
   res.render('playlists/index', {title: 'Browse Playlists', playlists});
 }
 
-async function allPlaylists(req, res) {
-  // Make the query object to use with Book.find based upon
-  // if the user has submitted via a search form for a book name
-  // let playlistQuery = req.query.name 
-  const playlists = await Playlist.find(playlistQuery);
-  // Why not reuse the books/index template?
-  res.render('/playlists/index', {
-    playlists
-  });
+async function show(req, res) {
+  const playlist = await Playlist.findById(req.params.id)
+  res.render('playlists/show', playlist);
+}
+
+
+function apple(req, res) {
+  res.render('playlists/apple', {title: 'Jammy Apple', service: 'Apple'});
+}
+
+function newApple(req, res) {
+  res.render('playlists/new', {title: 'Create a Playlist', service: 'Apple', errorMsg: ''});
+}
+
+function spotify(req, res) {
+  res.render('playlists/spotify', {title: 'Jammy Spotify', service: 'Spotify'});
+}
+
+function newSpotify(req, res) {
+  res.render('playlists/new', {title: 'Create a Playlist', service: 'Spotify', errorMsg: ''});
 }
