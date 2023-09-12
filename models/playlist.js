@@ -12,8 +12,10 @@ const playlistSchema = new Schema({
   },
   service: {
     type: String,
-    enum: ['Apple', 'Spotify']
-  }
+    enum: ['apple', 'spotify']
+  }, 
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model('Playlist', playlistSchema);

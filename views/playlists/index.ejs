@@ -4,6 +4,15 @@
   <%- include('../partials/spotify') %>
 <% }%>
 
-<a href='/playlists/<%= service %>/new'>Click to create a Playlist</a>
+
+<div id="displayPlay">
+<% playlists.forEach(function(p) { %>
+  <% if (p.service === service) { %>
+    <a href="/playlists/<%= p._id %>"><%= p.name %></a>
+  <% } %>  
+<% }); %> 
+</div>
+
+<a id="createBtn" href='/playlists/<%= service %>/new'>Click to create a Playlist</a>
 
 <%- include('../partials/footer') %>

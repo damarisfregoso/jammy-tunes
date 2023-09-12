@@ -56,3 +56,8 @@ h1 {
   background-color: rgb(254, 188, 213);
   opacity: 0.8;
 }
+
+#createBtn {
+  border-radius: 50px;
+  background-color: blue;
+}

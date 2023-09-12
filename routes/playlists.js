@@ -5,14 +5,12 @@ const playlistCtrl = require('../controller/playlists');
 
 
 // GET /playlists/new
-router.get('/', playlistCtrl.index);
+router.get('/', ensureLoggedIn, playlistCtrl.index);
 //GET /playlists/new
 router.get('/:service/new', ensureLoggedIn, playlistCtrl.new);
-// router.get('/spotify/new', ensureLoggedIn, playlistCtrl.new);
+//POST /playlists
+router.post('/', ensureLoggedIn, playlistCtrl.create);
 //GET /playlists/:id
 router.get('/:id', playlistCtrl.show);
-//GET /playlists/all
-// router.get('/all', playlistCtrl.allPlaylists);
-
 
 module.exports = router;

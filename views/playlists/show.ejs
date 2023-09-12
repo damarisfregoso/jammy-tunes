@@ -1,5 +1,16 @@
-<%- include('../partials/apple') %>
+<% if (service === 'apple') { %>
+  <%- include('../partials/apple') %>
+<% } else if (service === 'spotify') { %>
+  <%- include('../partials/spotify') %>
+<% }%>
+
+<div id="showPlaylist">
+  <h1><%= playlist.name %></h1>
+    <%= playlist.link %> 
+    <% if (user && user.name) { %>
+    <h4><%= user.name %></h4>
+    <% } %>
+</div>
 
 
-
-<%- include('../partials/apple') %>
+<%- include('../partials/footer') %>
