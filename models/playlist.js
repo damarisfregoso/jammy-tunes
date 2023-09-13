@@ -23,7 +23,7 @@ const playlistSchema = new Schema({
     type: String,
     enum: ['apple', 'spotify']
   }, 
-  songlinks: [songSchema]
+  songs: [songSchema]
 }, {
     timestamps: true
 });

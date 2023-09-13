@@ -6,12 +6,12 @@
 <aside>
   <form 
   id="createSong" 
-  action="/playlist/<%= playlist._id %>/songlinks"
+  action="/playlists/<%= playlist._id %>/songs"
   method="POST">
   <h4>Add to your playlist!</h4>
   <label>
-    Enter embedded here: 
-    <input type="songlinks">
+    Enter embedded link here: 
+    <input name="song">
   </label>
   <label>
     <button type="submit">Add to Playlist</button>
@@ -24,7 +24,14 @@
   <% if (user && user.name) { %>
     <h4>Created by <%= user.name %></h4>
     <% } %>
-  <%- playlist.link %> 
+  <!-- <%- playlist.link %>  -->
+  <% if (playlist.songs.length) { %> 
+  <% playlist.songs.forEach(function(s) { %>
+    <%- s.song %>
+  <% }); %>
+  <% } else { %>
+      No Songs Yet!
+  <% } %>
 </div>
 
 
