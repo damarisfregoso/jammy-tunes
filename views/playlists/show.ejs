@@ -2,12 +2,12 @@
   <%- include('../partials/apple') %>
 <% } else if (service === 'spotify') { %>
   <%- include('../partials/spotify') %>
-<% } %>
+<% }%>
+
+
 <aside>
-  <form 
-  id="createSong" 
-  action="/playlists/<%= playlist._id %>/songs"
-  method="POST">
+  <% if (user?._id.equals(playlist.user)) { %>
+  <form id="createSong" method="POST" action="/playlists/<%= playlist._id %>/songs">
   <h4>Add to your playlist!</h4>
   <label>
     Enter embedded link here: 
@@ -17,6 +17,7 @@
     <button type="submit">Add to Playlist</button>
   </label>
 </form>
+<% } %>
 </aside>
 
 <div id="showPlaylist">
@@ -24,15 +25,52 @@
   <% if (user && user.name) { %>
     <h4>Created by <%= user.name %></h4>
     <% } %>
-  <!-- <%- playlist.link %>  -->
   <% if (playlist.songs.length) { %> 
   <% playlist.songs.forEach(function(s) { %>
-    <%- s.song %>
+    <%- s.song %> 
+    <% if (user?._id.equals(s.user)) { %>
+    <form method="POST" action="/songs/<%= s._id %>?_method=DELETE"><button type="submit">Remove song from playlist</button></form>
+    <% } %>
   <% }); %>
   <% } else { %>
       No Songs Yet!
   <% } %>
 </div>
 
+<div>
+  <h4>Comments</h4>
+  <form id="addAComments" method="POST" action="/playlists/<%= playlist._id %>/comments">
+    <label>
+      Comment:
+      <textarea id="comments-content" name="content" rows="3" cols="20"></textarea>
+    </label>
+    <button type="submit">Leave Your Comment</button>
+  </form>
+</div>
+
+<% if (playlist.comments.length) { %> 
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Comments</th>
+        <th>Date</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <% playlist.comments.forEach(function(c) { %>
+    <tr>
+      <td class="review-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+      <td><%= c.comment %></td>
+      <td><%= c.createdAt.toLocaleDateString() %></td>
+      <td></td>
+      <td></td>
+    </tr>
+  <% }); %>
+  <% } else { %>
+    No comments yet!
+    <% } %>
 
 <%- include('../partials/footer') %>

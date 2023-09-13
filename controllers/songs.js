@@ -1,8 +1,18 @@
 const Playlist = require('../models/playlist');
 
 module.exports = {
-  create
+  create, 
+  delete: deleteSong
 };
+
+async function deleteSong(req, res) {
+  console.log('hello');
+  const playlist = await Playlist.findOne({ 'songs._id': req.params.id, 'songs.user': req.user._id});
+  if(!playlist) return res.redirect(`/playlists`);
+  playlist.songs.remove(req.params.id);
+  await playlist.save();
+  res.redirect(`/playlists/${playlist._id}`);
+}
 
 async function create(req, res) {
   const playlist = await Playlist.findById(req.params.id); 
@@ -16,3 +26,4 @@ async function create(req, res) {
   }
   res.redirect(`/playlists/${playlist._id}`);
 }
+

@@ -6,6 +6,7 @@ const playlistCtrl = require('../controllers/playlists');
 
 // GET /playlists/new
 router.get('/', ensureLoggedIn, playlistCtrl.index);
+router.get('/mine', ensureLoggedIn, playlistCtrl.myPlaylists);
 //GET /playlists/new
 router.get('/:service/new', ensureLoggedIn, playlistCtrl.new);
 //POST /playlists

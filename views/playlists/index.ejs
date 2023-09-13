@@ -9,7 +9,9 @@
 <% playlists.forEach(function(p) { %>
   <% if (p.service === service) { %>
     <a href="/playlists/<%= p._id %>"><%= p.name %></a>
-  <% } %>  
+  <% } else { %>
+    <a href="/playlists/<%= p._id %>"><%= p.name %></a>
+    <% } %>
 <% }); %> 
 </div>
 

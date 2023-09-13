@@ -9,9 +9,24 @@ const songSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true
+    // required: true
   }, 
   userName: String
+});
+
+const commentSchema = new Schema({
+  comment: {
+    type: String,
+    required: true
+  }, 
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    // required: true
+  }, 
+  userName: String
+}, {
+  timestamps: true
 });
 
 const playlistSchema = new Schema({
@@ -22,8 +37,15 @@ const playlistSchema = new Schema({
   service: {
     type: String,
     enum: ['apple', 'spotify']
+  },   
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    // required: true
   }, 
-  songs: [songSchema]
+  userName: String,
+  songs: [songSchema],
+  comments: [commentSchema]
 }, {
     timestamps: true
 });
