@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ensureLoggedIn = require('../config/ensureLoggedIn')
-const playlistCtrl = require('../controller/playlists');
+const playlistCtrl = require('../controllers/playlists');
 
 
 // GET /playlists/new

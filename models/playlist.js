@@ -1,12 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const playlistSchema = new Schema({
-  name: {
+const songSchema = new Schema({
+  song: {
     type: String,
     required: true
-  },
-  link: {
+  }, 
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  }, 
+  userName: String
+});
+
+const playlistSchema = new Schema({
+  name: {
     type: String,
     required: true
   },
@@ -14,6 +23,7 @@ const playlistSchema = new Schema({
     type: String,
     enum: ['apple', 'spotify']
   }, 
+  songlinks: [songSchema]
 }, {
     timestamps: true
 });

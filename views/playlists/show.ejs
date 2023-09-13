@@ -2,14 +2,29 @@
   <%- include('../partials/apple') %>
 <% } else if (service === 'spotify') { %>
   <%- include('../partials/spotify') %>
-<% }%>
+<% } %>
+<aside>
+  <form 
+  id="createSong" 
+  action="/playlist/<%= playlist._id %>/songlinks"
+  method="POST">
+  <h4>Add to your playlist!</h4>
+  <label>
+    Enter embedded here: 
+    <input type="songlinks">
+  </label>
+  <label>
+    <button type="submit">Add to Playlist</button>
+  </label>
+</form>
+</aside>
 
 <div id="showPlaylist">
   <h1><%= playlist.name %></h1>
-    <%= playlist.link %> 
-    <% if (user && user.name) { %>
-    <h4><%= user.name %></h4>
+  <% if (user && user.name) { %>
+    <h4>Created by <%= user.name %></h4>
     <% } %>
+  <%- playlist.link %> 
 </div>
 
 

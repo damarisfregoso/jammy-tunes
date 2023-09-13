@@ -16,9 +16,8 @@ async function index(req, res) {
 async function show(req, res) {
   const service = req.params.service;
   const playlist = await Playlist.findById(req.params.id)
-  res.render('playlists/show', { playlist, service });
+  res.render('playlists/show', { playlist , service });
 }
-
 
 function newPlaylist(req, res) {
   const service = req.params.service;
