@@ -9,22 +9,17 @@ module.exports = {
   delete: deletePlaylist
 }
 
-// async function index(req, res) {
-//   const playlists = await Playlist.find({});
-//   // const service = req.query.playlist || 'Playlists';
-//   res.render('playlists/index', {title: `Jammy ${service}`, playlists, service});
-// }
-
 async function index(req, res) {
   const query = req.query.playlist;
-  const playlists = await Playlist.find({});
+  console.log(query)
+  const playlists = await Playlist.find({service: req.query.playlist});
   if (query === "apple") {
   title = "Apple Music Playlists";
   service = "apple";
-} else if (query === "spotify") {
+  } else if (query === "spotify") {
     title = "Spotify Playlists";
     service = "spotify";
-}
+  }
   res.render('playlists/index', {title: `Jammy ${query}`, playlists, service});
 }
 

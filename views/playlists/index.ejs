@@ -1,23 +1,25 @@
 <% if (service === 'apple') { %>
   <%- include('../partials/apple') %>
+  <h1>Browse and Create a List!</h1>
+  <a id="createBtn" href='/playlists/<%= service %>/new'>Click to create a Playlist</a>
 <% } else if (service === 'spotify') { %>
   <%- include('../partials/spotify') %>
-<% }%>
+  <h1>Browse and Create a List!</h1>
+  <a id="createBtn" href='/playlists/<%= service %>/new'>Click to create a Playlist</a>
+<% } else if(service === 'My Playlists') { %>
+  <%- include('../partials/myPlaylist') %>
+  <h1>Browse Your Lists!</h1>
+<% } %>
 
-
-<div id="displayPlay">
-<% playlists.forEach(function(p) { %>
-  <% if (p.service === service) { %>
+<div id="displayLists">
+  <% playlists.forEach(function(p) { %>
     <a href="/playlists/<%= p._id %>"><%= p.name %></a>
     <% if (user?._id.equals(p.user)) { %>
       <form action="/playlists/<%= p._id %>?_method=DELETE" method="POST">
         <button type="submit">Remove</button>
       </form>
-      <% } %>
-  <% } %>
-<% }); %> 
+    <% } %>
+  <% }); %> 
 </div>
-
-<a id="createBtn" href='/playlists/<%= service %>/new'>Click to create a Playlist</a>
 
 <%- include('../partials/footer') %>

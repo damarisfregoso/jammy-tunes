@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+
+body {
+  background-image: url(https://content.mycutegraphics.com/backgrounds/yellow/yellow-music.gif);
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, .9);
+  color: white;
+}
+
+nav > a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#google {
+  height: 20px;
+}
+
+#homelogo {
+  height: 40px;
+}
+
+#avatar {
+  border-radius: 50px;
+  height: 50px;
+}

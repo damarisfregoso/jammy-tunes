@@ -21,8 +21,7 @@ const commentSchema = new Schema({
   }, 
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    // required: true
+    ref: 'User'
   }, 
   userName: String,
   userAvatar: String
@@ -41,14 +40,13 @@ const playlistSchema = new Schema({
   },   
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    // required: true
+    ref: 'User'
   }, 
   userName: String,
   songs: [songSchema],
   comments: [commentSchema]
 }, {
-    timestamps: true
+  timestamps: true
 });
 
 module.exports = mongoose.model('Playlist', playlistSchema);
