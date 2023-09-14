@@ -13,5 +13,7 @@ router.get('/:service/new', ensureLoggedIn, playlistCtrl.new);
 router.post('/', ensureLoggedIn, playlistCtrl.create);
 //GET /playlists/:id
 router.get('/:id', playlistCtrl.show);
+//DELETE /playlists/:id
+router.delete('/:id', playlistCtrl.delete);
 
 module.exports = router;

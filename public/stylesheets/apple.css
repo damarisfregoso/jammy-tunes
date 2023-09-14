@@ -13,7 +13,7 @@ nav {
   justify-content: flex-end;
   align-items: center;
   font-size: 20px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, .9);
   color: white;
 }
 
@@ -53,8 +53,6 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(254, 188, 213);
-  opacity: 0.8;
 }
 
 #createBtn {
@@ -66,4 +64,28 @@ h1 {
   display: grid;
   grid-template-rows: auto auto ;
   gap: 1rem;
+}
+
+#playlistStyle {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+#createList {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 175, 214, 0.5);
+}
+
+#showPlaylist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  margin-bottom: 10px;
 }

@@ -5,44 +5,46 @@
 <% }%>
 
 
-<aside>
+<div id="playlistStyle">
   <% if (user?._id.equals(playlist.user)) { %>
-  <form id="createSong" method="POST" action="/playlists/<%= playlist._id %>/songs">
-  <h4>Add to your playlist!</h4>
-  <label>
-    Enter embedded link here: 
-    <input name="song">
-  </label>
-  <label>
-    <button type="submit">Add to Playlist</button>
-  </label>
+  <form id="createList" method="POST" action="/playlists/<%= playlist._id %>/songs">
+    <h3>Add to your playlist!</h3>
+    <label>
+      Enter embedded link here: 
+      <input name="song" required pattern="<iframe(.+)" autocomplete="off">
+    </label>
+    <label>
+      <button type="submit">Add to Playlist</button>
+    </label>
+    <%- include('../partials/directions') %>
 </form>
-<% } %>
-</aside>
+<% } else { %>
+    enjoy this playlist by <%= user.name %>
+  <% }%>
 
-<div id="showPlaylist">
-  <h1><%= playlist.name %></h1>
-  <% if (user && user.name) { %>
-    <h4>Created by <%= user.name %></h4>
+  <div id="showPlaylist">
+    <h1><%= playlist.name %></h1>
+    <% if (playlist.songs.length) { %> 
+    <% playlist.songs.forEach(function(s) { %>
+      <%- s.song %> 
+      <% if (user?._id.equals(s.user)) { %>
+      <form method="POST" action="/songs/<%= s._id %>?_method=DELETE">
+        <button type="submit">Remove song from playlist</button>
+      </form>
+      <% } %>
+    <% }); %>
+    <% } else { %>
+        No Songs Yet!
     <% } %>
-  <% if (playlist.songs.length) { %> 
-  <% playlist.songs.forEach(function(s) { %>
-    <%- s.song %> 
-    <% if (user?._id.equals(s.user)) { %>
-    <form method="POST" action="/songs/<%= s._id %>?_method=DELETE"><button type="submit">Remove song from playlist</button></form>
-    <% } %>
-  <% }); %>
-  <% } else { %>
-      No Songs Yet!
-  <% } %>
+  </div>
 </div>
 
 <div>
-  <h4>Comments</h4>
+  <h3>Comments</h3>
   <form id="addAComments" method="POST" action="/playlists/<%= playlist._id %>/comments">
     <label>
       Comment:
-      <textarea id="comments-content" name="content" rows="3" cols="20"></textarea>
+      <textarea id="comments-content" name="comment" rows="3" cols="20"></textarea>
     </label>
     <button type="submit">Leave Your Comment</button>
   </form>
@@ -65,8 +67,20 @@
       <td class="review-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
       <td><%= c.comment %></td>
       <td><%= c.createdAt.toLocaleDateString() %></td>
-      <td></td>
-      <td></td>
+      <td>
+        <% if (user?._id.equals(c.user)) { %>
+        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form>
+        
+    </td>
+      <td>
+        <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
+          <input name="comment" value="<%= c.comment %>">
+          <button type="submit">EDIT COMMENT</button>
+        </form>
+        <% } %>
+      </td>
     </tr>
   <% }); %>
   <% } else { %>

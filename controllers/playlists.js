@@ -5,20 +5,31 @@ module.exports = {
   myPlaylists,
   new: newPlaylists,
   show, 
-  create
+  create,
+  delete: deletePlaylist
 }
 
+// async function index(req, res) {
+//   const playlists = await Playlist.find({});
+//   // const service = req.query.playlist || 'Playlists';
+//   res.render('playlists/index', {title: `Jammy ${service}`, playlists, service});
+// }
+
 async function index(req, res) {
-  console.log('hi');
+  const query = req.query.playlist;
   const playlists = await Playlist.find({});
-  const service = req.query.playlist || 'Playlists';
-  res.render('playlists/index', {title: `Jammy ${service}`, playlists, service});
+  if (query === "apple") {
+  title = "Apple Music Playlists";
+  service = "apple";
+} else if (query === "spotify") {
+    title = "Spotify Playlists";
+    service = "spotify";
+}
+  res.render('playlists/index', {title: `Jammy ${query}`, playlists, service});
 }
 
 async function myPlaylists(req, res) {
-  console.log('hi');
   const playlists = await Playlist.find({'user': req.user._id});
-  console.log('hello', playlists)
   const service = req.query.playlist || 'My Playlists';
   res.render('playlists/index', {title: service, playlists, service});
 }
@@ -44,5 +55,10 @@ async function create(req, res) {
     console.log(err) 
     res.redirect('/playlists/new')
     }
+  }
+
+  async function deletePlaylist(req, res) {
+    await Playlist.findOneAndDelete({ _id: req.params.id, user: req.user._id });
+    res.redirect('/playlists');
   }
 

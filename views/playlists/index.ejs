@@ -9,9 +9,12 @@
 <% playlists.forEach(function(p) { %>
   <% if (p.service === service) { %>
     <a href="/playlists/<%= p._id %>"><%= p.name %></a>
-  <% } else { %>
-    <a href="/playlists/<%= p._id %>"><%= p.name %></a>
-    <% } %>
+    <% if (user?._id.equals(p.user)) { %>
+      <form action="/playlists/<%= p._id %>?_method=DELETE" method="POST">
+        <button type="submit">Remove</button>
+      </form>
+      <% } %>
+  <% } %>
 <% }); %> 
 </div>
 
