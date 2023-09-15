@@ -21,14 +21,16 @@
 
   |   Description | Screenshot | 
   |:-------------:| -----------|
-  | <h3>Feed Page</h3> | <img
-    src="https://github.com/profpan396/meet-your-classmates/blob/main/public/Screenshots/FeedPage.png?raw=true"
-    width="700"
-  /> |
-  | <h3 align="center">Profile Page</h3> | <img
-  src="https://github.com/profpan396/meet-your-classmates/raw/main/public/Screenshots/ProfilePage.png"
-  width="700"
-  /> |
+  | <h3>Landing Page</h3> | <img src="https://i.imgur.com/WtE63Wh.png" width="700"/> |
+  | <h3>Browse Appple Playlist</h3> | <img src="https://i.imgur.com/asmujmU.png" width="700"/> |
+  | <h3>Create a Apple Playlist</h3> | <img src="https://i.imgur.com/VezaDZO.png" width="700"/> |
+  | <h3>Add a Song</h3> | <img src="https://i.imgur.com/CkSatfw.png" width="700"/> |
+  | <h3>View Your Playlist and add comments</h3> | <img src="https://i.imgur.com/YQsP1y2.png" width="700"/> |
+  | <h3>Browse Spotify Playlist</h3> | <img src="https://i.imgur.com/Lr4qC3x.png" width="700"/> |
+  | <h3>Create a Spotify Playlist</h3> | <img src="https://i.imgur.com/D7jP846.png" width="700"/> |
+  | <h3>Add a Song</h3> | <img src="https://i.imgur.com/wYOSMiq.png" width="700"/> |
+  | <h3>View Your Playlist and add comments</h3> | <img src="https://i.imgur.com/hC6IwNq.png" width="700"/> |
+  | <h3>Only playlists created by user</h3> | <img src="https://i.imgur.com/Hh39aYW.png" width="700"/> |
 
 
 ## 💻 Technologies Used
@@ -39,6 +41,7 @@
 ![Heroku](https://img.shields.io/badge/-Heroku-05122A?style=flat&logo=heroku)
 ![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
+![Markdown](https://img.shields.io/badge/-Markdown-05122A?style=flat&logo=markdown)
 ![MongoDB](https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb)
 ![Mongoose ODM](https://img.shields.io/badge/-Mongoose_ODM-05122A?style=flat&logo=mongodb)
 ![Node](https://img.shields.io/badge/-Node.js-05122A?style=flat&logo=node.js)
