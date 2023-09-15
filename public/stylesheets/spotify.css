@@ -1,11 +1,11 @@
 * {
   box-sizing: border-box;
   font-family: 'DM Sans', sans-serif;
-  margin: 0;
 }
 
 body {
-  background-image: url(https://wallpapers.com/images/hd/music-notes-background-htpu2f4dj0k463h6.jpg);
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3cd770b2-3e49-4672-99fb-8483b9dd9bf0/dg2k29u-9851dd8a-8d2d-4553-a05f-735162de949e.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjZDc3MGIyLTNlNDktNDY3Mi05OWZiLTg0ODNiOWRkOWJmMFwvZGcyazI5dS05ODUxZGQ4YS04ZDJkLTQ1NTMtYTA1Zi03MzUxNjJkZTk0OWUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.hZ6ZwpZvpCu60uiGP0wRAm3XKBr4iRmdzTQhpg6doqk);
+  margin: 0;
 }
 
 nav {
@@ -35,6 +35,14 @@ nav > a {
   height: 50px;
 }
 
+#displayLists {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
 #createPlaylists {
   display: flex;
   flex-direction: column;
@@ -59,15 +67,20 @@ h1 {
   align-items: center;
 }
 
-#createBtn {
-  border-radius: 50px;
-  background-color: blue;
+p {
+  text-align: center;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
 }
 
 #addAComments {
-  display: grid;
-  grid-template-rows: auto auto ;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #playlistStyle {
@@ -91,5 +104,108 @@ h1 {
 }
 
 footer {
-  margin-bottom: 10px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#remove {
+  background-color: rgb(255, 127, 127);
+  border-radius: 50px;
+}
+
+#remove:hover {
+  background-color: rgb(255, 93, 93);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#trash {
+  height: 20px;
+}
+
+#edit {
+  background-color: rgb(184, 255, 195);
+  border-radius: 50px;
+}
+
+#edit:hover {
+  background-color: rgb(132, 250, 149);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#add {
+  background-color: rgb(184, 255, 195);
+  border-radius: 50px;
+}
+
+#add:hover {
+  background-color: rgb(132, 250, 149);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#enjoy {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(192, 255, 175, 0.5);
+  margin: 0;
+  padding: 3px;
+}
+
+#howTo {
+  margin-left: 15px;
+}
+
+p > a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+a {
+  color: rgb(255, 255, 255);
+}
+
+table {
+  font-size: 18px;
+  font-weight: 1000;
+}
+
+table thead th {
+  padding: 5px;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+}
+
+#list td:nth-child(2), #list td:nth-child(3){
+  min-width: 100px;
+}
+
+.review-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#listening {
+  height: 150px;
+}
+
+#createBtn {
+  background-color: rgb(132, 250, 149);
+  color: black;
+  border-radius: 50px;
+  padding: 3px;
+}
+
+#createBtn:hover {
+  background-color: rgb(184, 255, 195);
+  border-radius: 50px;
+  cursor: pointer;
 }

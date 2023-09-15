@@ -12,10 +12,11 @@ nav {
 }
 
 body {
-  background-color: rgb(255, 255, 177);
+  background-image: url(https://content.mycutegraphics.com/backgrounds/yellow/yellow-music.gif);
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-family: 'DM Sans', sans-serif;
   margin: 0;
+  height: 100vh;
 }
 
 #headerService {
@@ -52,4 +53,9 @@ body {
 a {
   color: #ffffff;
   text-decoration: none;
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
 }

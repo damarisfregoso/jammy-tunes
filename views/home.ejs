@@ -2,7 +2,7 @@
 
 <div id="headerService">
   <% if (user && user.name) { %>
-    <%  let firstName = user.name.split(' ')[0] %>
+    <%  let firstName = user.name.split(' ')[0]; %>
     <h1>Welcome to Jammy Tunes <%= firstName %></h1>
   <% } else { %>
     <h1>Welcome to Jammy Tunes!</h1>

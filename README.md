@@ -18,7 +18,6 @@
 
 
 ## 📸 Screenshots 
-  ## :camera_flash: Screenshots 
 
   |   Description | Screenshot | 
   |:-------------:| -----------|
@@ -50,6 +49,7 @@
 ## 📝 Getting Started
 <details open>
   <summary> How to Create a Playlist </summary>
+
     1. Choose from Apple or Spotify as the service to use.
     2. Create a name for your Playlist and push add a song.
     3. Login/Sign Up to your Apple/Spotify account.
@@ -64,18 +64,17 @@
   <a href="https://trello.com/b/WThGuODo/jammy-tunes"
     > https://trello.com/b/WThGuODo/jammy-tunes </a
   >
-</details>
+
 
 <details open>
   <summary> Deployed Link (Heroku) </summary>
-  <a href="https://jammy-tunes-03284b6c64bc.herokuapp.com/"
-    > https://jammy-tunes-03284b6c64bc.herokuapp.com/ </a
-  >
+  <a href="https://jammy-tunes-03284b6c64bc.herokuapp.com/"> https://jammy-tunes-03284b6c64bc.herokuapp.com/ </a>
+</details>
 
 ## ⏭️ Next Steps
 
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
+- [ ] Allow users to add existing playlists to their playlists
+- [ ] Allow users to change their playlist name
+- [ ] Allow users to input their own background images to make the page feel more customizable for their preference 
 
 </div>

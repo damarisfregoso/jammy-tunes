@@ -13,22 +13,26 @@
         <input name="song" required pattern="<iframe(.+)" autocomplete="off">
       </label>
       <label>
-        <button type="submit">Add to Playlist</button>
+        <button id="add" type="submit">Add to Playlist</button>
       </label>
       <%- include('../partials/directions') %>
     </form>
-<% } else { %>
-    Enjoy this playlist by <%= user.name %>
+  <% } else { %>
+    <h1 id="enjoy">
+      <img id="listening" src="https://static.vecteezy.com/system/resources/previews/019/582/368/original/woman-listening-to-music-png.png" alt="girl listening to music">
+      Sit back, relax and enjoy this playlist!  
+      <img id="listening" src="https://cdni.iconscout.com/illustration/premium/thumb/boy-relaxing-while-listening-music-6592232-5590722.png" alt="boy listening to music">
+    </h1>
   <% }%>
 
   <div id="showPlaylist">
-    <h1><%= playlist.name %></h1>
+    <h1 id="playTitle"><%= playlist.name %></h1>
     <% if (playlist.songs.length) { %> 
       <% playlist.songs.forEach(function(s) { %>
-        <%- s.song %> 
+        <%- s.song %>
         <% if (user?._id.equals(s.user)) { %>
           <form method="POST" action="/songs/<%= s._id %>?_method=DELETE">
-            <button type="submit">Remove song from playlist</button>
+            <button id="remove" type="submit">Remove song from playlist</button>
           </form>
         <% } %>
       <% }); %>
@@ -43,9 +47,9 @@
   <form id="addAComments" method="POST" action="/playlists/<%= playlist._id %>/comments">
     <label>
       Comment:
-      <textarea id="comments-content" name="comment" rows="3" cols="20"></textarea>
+      <textarea id="comments-content" name="comment" rows="1" cols="30"></textarea>
     </label>
-    <button type="submit">Leave Your Comment</button>
+    <button id="add" type="submit">Leave Your Comment</button>
   </form>
 </div>
 
@@ -69,13 +73,13 @@
           <td>
             <% if (user?._id.equals(c.user)) { %>
               <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
+                <button id="remove" type="submit"><img id="trash" src="https://www.freeiconspng.com/thumbs/trash-can-icon/trash-can-icon-28.png" alt="trash"></button>
               </form>
           </td>
           <td>
             <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
               <input name="comment" value="<%= c.comment %>">
-              <button type="submit">EDIT COMMENT</button>
+              <button id="edit" type="submit">EDIT COMMENT</button>
             </form>
             <% } %>
           </td>
@@ -84,7 +88,7 @@
     </tbody>
   </table>
 <% } else { %>
-  No comments yet!
+  <h3>No comments yet!</h3>
 <% } %>
 
 <%- include('../partials/footer') %>

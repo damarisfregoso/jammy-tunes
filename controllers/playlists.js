@@ -11,7 +11,6 @@ module.exports = {
 
 async function index(req, res) {
   const query = req.query.playlist;
-  console.log(query)
   const playlists = await Playlist.find({service: req.query.playlist});
   if (query === "apple") {
   title = "Apple Music Playlists";
@@ -35,7 +34,7 @@ function newPlaylists(req, res) {
 }
 
 async function show(req, res) {
-  const playlist = await Playlist.findById(req.params.id)
+  const playlist = await Playlist.findById(req.params.id);
   const service = playlist.service;
   res.render('playlists/show', { playlist , service });
 }
@@ -45,15 +44,14 @@ async function create(req, res) {
   playlist.user = req.user._id;
   try {
     await playlist.save();
-    res.redirect(`/playlists/${playlist._id}`)
+    res.redirect(`/playlists/${playlist._id}`);
   } catch (err) {
-    console.log(err) 
-    res.redirect('/playlists/new')
+    console.log(err); 
+    res.redirect('/playlists/new');
     }
   }
 
-  async function deletePlaylist(req, res) {
-    await Playlist.findOneAndDelete({ _id: req.params.id, user: req.user._id });
-    res.redirect('/playlists');
-  }
-
+async function deletePlaylist(req, res) {
+  await Playlist.findOneAndDelete({ _id: req.params.id, user: req.user._id });
+  res.redirect('/');
+}
