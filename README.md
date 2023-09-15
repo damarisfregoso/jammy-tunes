@@ -14,7 +14,7 @@
 <div id="body">
 
 ## 🖨 Description 
-**Jammy Tunes** is a webpage that gives access to a logged in user to create playlists!  **Jammy Tunes** also always logged in users to browse other users playlists and comment if they like the playlist!  A logged in user has their own page to look at playlists they have created.
+**Jammy Tunes** is a webpage that gives access to a logged in user to create playlists!  **Jammy Tunes** also allows logged in users to browse other users playlists and comment if they like the playlist!  A logged in user has their own page to look at playlists they have created.
 
 
 ## 📸 Screenshots 
@@ -25,12 +25,12 @@
   | <h3>Browse Appple Playlist</h3> | <img src="https://i.imgur.com/asmujmU.png" width="700"/> |
   | <h3>Create a Apple Playlist</h3> | <img src="https://i.imgur.com/VezaDZO.png" width="700"/> |
   | <h3>Add a Song</h3> | <img src="https://i.imgur.com/CkSatfw.png" width="700"/> |
-  | <h3>View Your Playlist and add comments</h3> | <img src="https://i.imgur.com/YQsP1y2.png" width="700"/> |
+  | <h3>View Your Playlist and Add Comments</h3> | <img src="https://i.imgur.com/YQsP1y2.png" width="700"/> |
   | <h3>Browse Spotify Playlist</h3> | <img src="https://i.imgur.com/Lr4qC3x.png" width="700"/> |
   | <h3>Create a Spotify Playlist</h3> | <img src="https://i.imgur.com/D7jP846.png" width="700"/> |
   | <h3>Add a Song</h3> | <img src="https://i.imgur.com/wYOSMiq.png" width="700"/> |
-  | <h3>View Your Playlist and add comments</h3> | <img src="https://i.imgur.com/hC6IwNq.png" width="700"/> |
-  | <h3>Only playlists created by user</h3> | <img src="https://i.imgur.com/Hh39aYW.png" width="700"/> |
+  | <h3>View Your Playlist and Add Comments</h3> | <img src="https://i.imgur.com/hC6IwNq.png" width="700"/> |
+  | <h3>My Playlist Page</h3> | <img src="https://i.imgur.com/Hh39aYW.png" width="700"/> |
 
 
 ## 💻 Technologies Used
@@ -50,6 +50,8 @@
 
 
 ## 📝 Getting Started
+
+### 📜 Instructions
 <details open>
   <summary> How to Create a Playlist </summary>
 
@@ -62,12 +64,13 @@
     7. Select the option with Embed Code.
     8. Paste the embedded link into the link section!
 </details>
+
+## 🔗 Links
+
 <details open>
   <summary> Trello Board </summary>
-  <a href="https://trello.com/b/WThGuODo/jammy-tunes"
-    > https://trello.com/b/WThGuODo/jammy-tunes </a
-  >
-
+  <a href="https://trello.com/b/WThGuODo/jammy-tunes"> https://trello.com/b/WThGuODo/jammy-tunes </a>
+</details>
 
 <details open>
   <summary> Deployed Link (Heroku) </summary>
